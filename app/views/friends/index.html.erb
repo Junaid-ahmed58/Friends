@@ -10,6 +10,7 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Instagram</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,11 +21,12 @@
        <td><%= friend.email %></td>
        <td><%= friend.phone %></td>
        <td><%= friend.instagram %></td>
-       <td><%= link_to "Edit", edit_friend_path(friend), class:"btn btn-secondary" %></td>
-       <td><%= link_to "Show", friend_path(friend), class:"btn btn-secondary" %></td>
-       <td><%= link_to "Destroy", friend_path(friend), data: { "turbo-method": :delete }, class:"btn btn-secondary" %></td>
+       <td>
+        <%= link_to "Edit", edit_friend_path(friend), class:"btn btn-secondary" %>
+        <%= link_to "Show", friend_path(friend), class:"btn btn-secondary" %>
+        <%= link_to "Destroy", friend_path(friend), data: { "turbo-method": :delete }, class:"btn btn-secondary" %>
+       </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "New Friend", new_friend_path, class:"btn btn-secondary" %>
